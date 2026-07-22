@@ -23,7 +23,8 @@ apt-get install -y curl
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 
 安装成功后需要自己准备一个配置文件，可以参考我的配置文件，请自行修改端口、uuid等参数(执行下面的命令下载参考配置文件)：
-wget https://raw.githubusercontent.com/bannedbook/fanqiang/master/v2ss/server-cfg/v2/config.json  -O -> /usr/local/etc/v2ray/config.json
+wget https://raw.githubusercontent.com/tilsonm828/bakup/refs/heads/main/config.json  -O -> /usr/local/etc/v2ray/config.json
+"""wget https://raw.githubusercontent.com/bannedbook/fanqiang/master/v2ss/server-cfg/v2/config.json  -O -> /usr/local/etc/v2ray/config.json"""
 
 安装完成后，请执行： service v2ray restart ,以确保v2ray启动成功。
 
@@ -34,11 +35,11 @@ service v2ray restart | force-reload  |start|stop|status|reload
 /usr/local/bin/v2ray test -config /usr/local/etc/v2ray/config.json
 
 开放需要的端口
-ufw allow 80/tcp
-ufw allow 80/udp
-
 ufw allow 33060/tcp
 ufw allow 33060/udp
+
+ufw allow 443/tcp
+ufw allow 443/udp
 
 
 [第五步：V2ray客户端配置]
